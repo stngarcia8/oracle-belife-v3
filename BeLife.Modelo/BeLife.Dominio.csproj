@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{157101E5-17C0-4E1C-B69F-37A9697C843A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeLife.Dominio</RootNamespace>
+    <AssemblyName>DomainLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SonarQubeTestProject>False</SonarQubeTestProject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>BeLife.Dominio.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BeLife.Dominio.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Contrato.cs" />
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\DetalleContrato.cs" />
+    <Compile Include="Clases\Vehiculo.cs" />
+    <Compile Include="Clases\DetalleGrid.cs" />
+    <Compile Include="Clases\IPrima.cs" />
+    <Compile Include="Clases\Prima.cs" />
+    <Compile Include="Clases\PrimaFactory.cs" />
+    <Compile Include="Clases\PrimaVehiculo.cs" />
+    <Compile Include="Clases\PrimaVivienda.cs" />
+    <Compile Include="Clases\Vivienda.cs" />
+    <Compile Include="Dto\DtoCliente.cs" />
+    <Compile Include="Dto\DtoComuna.cs" />
+    <Compile Include="Dto\DtoContrato.cs" />
+    <Compile Include="Dto\DtoContratoCliente.cs" />
+    <Compile Include="Dto\DtoEstadoCivil.cs" />
+    <Compile Include="Dto\DtoMarca.cs" />
+    <Compile Include="Dto\DtoModelo.cs" />
+    <Compile Include="Dto\DtoPlan.cs" />
+    <Compile Include="Dto\DtoRegion.cs" />
+    <Compile Include="Dto\DtoSexo.cs" />
+    <Compile Include="Dto\DtoTipoPlan.cs" />
+    <Compile Include="Dto\DtoVehiculo.cs" />
+    <Compile Include="Enumeraciones\TipoSeguro.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clases\PrimaSeguroVida.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeLife.Aplicacion\BeLife.Aplicacion.csproj">
+      <Project>{ad4d4e0f-b4c5-441f-8391-c39e26173e8c}</Project>
+      <Name>BeLife.Aplicacion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BeLife.Dominio.ruleset" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
